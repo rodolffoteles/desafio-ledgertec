@@ -1,2 +1,7 @@
 # Node dependency directory
 /node_modules
+
+# Sqlite files
+*.sqlite3
+:memory
+:memory-journal

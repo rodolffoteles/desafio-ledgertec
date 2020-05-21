@@ -12,11 +12,10 @@ app.use('/products', productRouter);
 
 // Error handler
 app.use(async (err, req, res, next) => {
-  if (process.env.NODE_ENV === 'production'){
-    return res.status(500).end();
-  } else {
-    console.log(err);
+  if (process.env.NODE_ENV === 'development'){
     return res.status(500).json(err);
+  } else {
+    return res.status(500).end();
   }
 });
 
