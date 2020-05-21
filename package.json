@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon"
+    "dev": "NODE_ENV=development nodemon"
   },
   "keywords": [
     "RESTful"
@@ -14,6 +14,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
+    "express-async-errors": "^3.1.1",
     "sequelize": "^5.21.10",
     "sqlite3": "^4.2.0"
   },
