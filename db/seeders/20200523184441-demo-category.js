@@ -5,21 +5,15 @@ module.exports = {
     return queryInterface.bulkInsert('Categories', [
       { 
         id: 1, 
-        category: 'Pants',
-        createdAt: new Date(),
-        updatedAt: new Date() 
+        category: 'Pants'
       }, { 
         id: 2, 
-        category: 'Shirt', 
-        createdAt: new Date(),
-        updatedAt: new Date()
+        category: 'Shirt'
       }, { 
         id: 3,
-        category: 'Shoe',
-        createdAt: new Date(),
-        updatedAt: new Date() 
+        category: 'Shoe'
       }
-    ], {});
+    ]);
   },
 
   down: (queryInterface, Sequelize) => {
