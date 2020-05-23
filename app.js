@@ -1,6 +1,6 @@
 const express = require('express');
 require('express-async-errors');
-const productRouter = require('./routes');
+const router = require('./routes');
 
 const app = express();
 
@@ -8,7 +8,7 @@ const app = express();
 app.use(express.json());
 
 // Routes
-app.use('/products', productRouter);
+app.use(router);
 
 // Error handler
 app.use(async (err, req, res, next) => {
