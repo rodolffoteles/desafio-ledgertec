@@ -1,0 +1,53 @@
+@import '../../style/shared.scss';
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.75rem;
+
+  label {
+    margin-bottom: 0.5rem;
+    color: $grey-dark;
+  }
+}
+
+input, textarea {
+  background-color: $text-light;
+  color: $grey-darkest;
+  border: 1px solid $grey;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  transition: border-color 0.2s ease;
+
+  &:focus {
+    color: $text-dark;
+    border-color: $blue;
+  }
+}
+
+.alert {
+  padding: 0.75rem 0.5rem;
+  background-color: $red-lightest;
+  border: 1px solid $red-light;
+  color: $red-darkest;
+  border-radius: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+button {
+  cursor: pointer;
+  color: white;
+  border-radius: 0.25rem;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  transition-duration: 0.2s;
+
+  &.btn-green {
+    background-color: $green;
+
+    &:hover {
+      background-color: $green-darkest;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+@import '../../style/shared.scss';
+
+.product {
+  border-bottom: 1px solid $grey-lightest;
+  padding: 0.5rem;
+  transition: background-color 0.2s ease;
+  color: $text-dark;
+
+  p {
+    color: $grey-dark;
+    margin-bottom: 0.5rem;
+  }
+
+  &:hover {
+    background-color: $grey-lightest;
+  }
+
+  svg {
+    height: 1rem;
+  }
+}

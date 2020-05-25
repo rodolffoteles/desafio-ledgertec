@@ -3,52 +3,11 @@
 .side-panel {
   display: flex;
   flex-direction: column;
-  padding: 1rem;
-  border-right: 1px solid $grey-lighter;
-}
+  padding: 0 1rem;
+  border-right: 1px solid $grey;
+  background-color: $grey-lightest;
 
-.form-group {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 0.75rem;
-
-  label {
-    margin-bottom: 0.5rem;
-    color: $grey;
+  button {
+    width: 100%;
   }
 }
-
-input, textarea {
-  background-color: $text-light;
-  color: $grey;
-  border: 1px solid $grey-lighter;
-  border-radius: 0.25rem;
-  padding: 0.5rem;
-  transition: border-color 0.2s ease;
-
-  &:focus {
-    color: $text-dark;
-    border-color: $blue;
-  }
-}
-
-button {
-  cursor: pointer;
-  color: white;
-  border-radius: 0.25rem;
-  border: none;
-  padding: 0.5rem 1rem;
-  margin-top: 1rem;
-  width: 100%;
-  transition-duration: 0.2s;
-
-  &.btn-green {
-    background-color: $green;
-
-    &:hover {
-      background-color: $green-dark;
-    }
-  }
-}
-
-

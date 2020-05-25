@@ -8,7 +8,15 @@ html, body {
   width: 100%;
 }
 
-body {
-	margin: 0;
+html, body, div, span, 
+h1, h2, h3, h4, h5, h6, 
+p, a, article, canvas, 
+footer, header, nav, 
+output, section {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
-
