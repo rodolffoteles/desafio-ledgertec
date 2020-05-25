@@ -30,8 +30,13 @@ class ProductsController {
   }
   
   async create(req, res) {
-    let product = await Product.create(req.body, { 
-      fields: ['description', 'id_category']
+    let [category, ] = await Category.findOrCreate({ 
+      where: { category: req.body.category } 
+    })
+
+    let product = await Product.create({
+      id_category: category.id,
+      description: req.body.description
     });
   
     return res.location(`/products/${product.id}`).status(201).end();
@@ -39,12 +44,18 @@ class ProductsController {
 
   async update(req, res) {
     let product = await Product.findByPk(req.params.id);
-   
     if (!product) {
       return res.status(404).end();
     }
+
+    let [category, ] = await Category.findOrCreate({ 
+      where: { category: req.body.category } 
+    })
    
-    product.update(req.body, { fields: ['description', 'id_category'] })
+    product.update({
+      id_category: category.id,
+      description: req.body.description
+    })
    
     return res.status(204).end();
   }
