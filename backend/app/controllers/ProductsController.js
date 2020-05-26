@@ -3,11 +3,12 @@ const { Product, Category } = require('../models');
 class ProductsController {
   async index(req, res) {
     let products = await Product.findAll({
-      attributes: ['id', 'description'],
+      attributes: ['id', 'description', 'id_category', 'Category.category'],
       include: { 
         model: Category,
-        attributes: ['id', 'category']
-      }
+        attributes: []
+      },
+      raw: true
     });
     
     return res.status(200).json(products);
@@ -15,10 +16,10 @@ class ProductsController {
 
   async show(req, res) {
     let product = await Product.findByPk(req.params.id, {
-      attributes: ['id', 'description'],
+      attributes: ['id', 'description', 'id_category', 'Category.category'],
       include: {
         model: Category,
-        attributes: ['id', 'category']
+        attributes: []
       }
     });
     

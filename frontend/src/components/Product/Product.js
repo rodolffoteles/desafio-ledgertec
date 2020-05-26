@@ -23,7 +23,7 @@ const Product = ({ product, updateProductsList, showEditPanel }) => {
   return (
     <article className="product">
       <div>
-        <p>{product.Category.category}</p>
+        <p>{product.category}</p>
         {product.description}
       </div>
 

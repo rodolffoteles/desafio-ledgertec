@@ -15,7 +15,7 @@ const ListPanel = ({ error, products, updateProductsList, showEditPanel }) => {
   const headerTitle = location.pathname.slice(1);
 
   // Create array with unique categories
-  let categories = products.map(product => product.Category.category);
+  let categories = products.map(product => product.category);
   categories = [...new Set(categories)]; 
 
   return (

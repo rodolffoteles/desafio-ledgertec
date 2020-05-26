@@ -40,7 +40,7 @@ const EditPanel = ({ product, updateProductsList, closeEditPanel }) => {
       <ProductForm 
         handleSubmit={updateProduct} 
         actionWord="Edit"
-        initialCategory={product.Category.category}
+        initialCategory={product.category}
         initialDescription={product.description}/>
     </section>
   );

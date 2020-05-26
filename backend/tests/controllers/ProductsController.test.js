@@ -42,7 +42,8 @@ describe('Products', () => {
     expect(product.body).toEqual({
       id: expect.any(Number),
       description: 'Riachuelo Mens Slim Jeans',
-      Category: expect.any(Object)
+      id_category: expect.any(Number),
+      category: 'Pants'
     });
   });
 

@@ -14,7 +14,7 @@ const ProductList = ({ products, updateProductsList, showEditPanel }) => {
   let productsToList = products;
   if (category) {
     productsToList = products.filter(product => 
-      product.Category.category === category
+      product.category === category
     );
   }
   
