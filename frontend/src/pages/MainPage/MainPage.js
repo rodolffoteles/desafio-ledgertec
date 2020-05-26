@@ -2,7 +2,7 @@ import React, { useState, useCallback } from 'react';
 import './MainPage.scss';
 
 
-import SidePanel from '../../components/SidePanel';
+import AddPanel from '../../components/AddPanel';
 import ProductList from '../../components/ProductList';
 import EditPanel from '../../components/EditPanel';
 
@@ -23,7 +23,7 @@ const MainPage = () => {
 
   return (
     <main>
-      <SidePanel updateProductsList={updateProductsList}/>
+      <AddPanel updateProductsList={updateProductsList}/>
       <ProductList 
         products={products} 
         error={error} 

@@ -1,9 +1,9 @@
 import React from 'react';
-import './SidePanel.scss'
+import './AddPanel.scss'
 
 import ProductForm from '../ProductForm';
 
-const SidePanel = ({ updateProductsList }) => {
+const AddPanel = ({ updateProductsList }) => {
   const postProduct = (category, description) => {
     fetch('http://localhost:3001/products', {
       method: 'POST',
@@ -32,4 +32,4 @@ const SidePanel = ({ updateProductsList }) => {
   )
 }
 
-export default SidePanel;
+export default AddPanel;
