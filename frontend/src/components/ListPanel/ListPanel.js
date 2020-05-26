@@ -16,7 +16,7 @@ const ListPanel = ({ error, products, updateProductsList, showEditPanel }) => {
 
   // Create array with unique categories
   let categories = products.map(product => product.Category.category);
-  categories = [... new Set(categories)]; 
+  categories = [...new Set(categories)]; 
 
   return (
     <section className="list-panel">
@@ -31,10 +31,11 @@ const ListPanel = ({ error, products, updateProductsList, showEditPanel }) => {
       
       <div className="scrollable">
         <Switch>
-          <Route path='/categories'>
+          <Route path="/categories">
             <CategoryList categories={categories}/>
           </Route>
-          <Route path='/products'>
+
+          <Route path="/products">
             <ProductList 
               products={products}
               updateProductsList={updateProductsList}

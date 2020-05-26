@@ -1,5 +1,6 @@
 import React from 'react';
 import './CategoryList.scss';
+import { Link } from 'react-router-dom';
 
 const CategoryList = ({ categories }) => {
   return (
@@ -7,6 +8,13 @@ const CategoryList = ({ categories }) => {
         {categories.map((category, index) => 
           <article className="category" key={index}>
             {category}
+            
+            <Link to={{
+              pathname: "/products",
+              search: `?category=${category}`,
+            }}>
+              Check products
+            </Link>
           </article>
         )}
     </div>

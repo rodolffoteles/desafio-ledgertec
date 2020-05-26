@@ -3,8 +3,25 @@
 .category {
   padding: 1rem;
   border-bottom: 1px solid $grey-light;
+  display: flex;
+  flex-direction: column;
 
   &:hover {
     background-color: $grey-light;
+  }
+
+  a {
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+    text-decoration: none;
+    color: $blue;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &:visited {
+      color: $blue-light;
+    }
   }
 }
