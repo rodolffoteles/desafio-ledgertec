@@ -1,0 +1,10 @@
+@import '../../style/shared.scss';
+
+.category {
+  padding: 1rem;
+  border-bottom: 1px solid $grey-light;
+
+  &:hover {
+    background-color: $grey-light;
+  }
+}

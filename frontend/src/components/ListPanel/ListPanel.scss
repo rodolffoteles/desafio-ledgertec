@@ -1,0 +1,59 @@
+@import '../../style/shared.scss';
+
+.list-panel {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+
+  header {
+    padding-top: 1rem;
+
+    h3 {
+      margin: 0 1rem;
+      font-size: 1.2rem;
+      font-weight: 500;
+      text-transform: capitalize;
+    }
+  }
+
+  nav {
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+    .tab {
+      cursor: pointer;
+      color: $grey-darkest;
+      text-decoration: none;
+      padding: 1rem;
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: background-color 0.3s ease-out;
+      border-bottom: 1px solid $grey;
+
+      &:hover {
+        background-color: $blue-lightest;
+      }
+
+      &.active {
+        color: $blue;
+        border-bottom: 2px solid $blue;
+      }
+    }
+  }
+
+
+  .alert {
+    color: $grey-dark;
+    background-color: transparent;
+    border: none;
+    text-align: center;
+  }
+
+  .scrollable {
+    overflow: scroll;
+  }
+}

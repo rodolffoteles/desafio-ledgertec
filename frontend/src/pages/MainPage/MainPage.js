@@ -3,7 +3,7 @@ import './MainPage.scss';
 
 
 import AddPanel from '../../components/AddPanel';
-import ProductList from '../../components/ProductList';
+import ListPanel from '../../components/ListPanel';
 import EditPanel from '../../components/EditPanel';
 
 const MainPage = () => {
@@ -24,7 +24,7 @@ const MainPage = () => {
   return (
     <main>
       <AddPanel updateProductsList={updateProductsList}/>
-      <ProductList 
+      <ListPanel
         products={products} 
         error={error} 
         updateProductsList={updateProductsList}
