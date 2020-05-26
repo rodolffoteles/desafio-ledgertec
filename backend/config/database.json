@@ -9,6 +9,7 @@
   },
   "production": {
     "dialect": "sqlite",
-    "storage": "./db/data.sqlite3"
+    "storage": "./db/data.sqlite3",
+    "logging": false
   }
 }
