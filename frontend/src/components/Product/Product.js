@@ -4,6 +4,7 @@ import './Product.scss';
 import {ReactComponent as TrashIcon} from './trash.svg';
 
 const Product = ({ description, category }) => {
+
   return (
     <article className="product">
       <div>

@@ -1,21 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import './ProductList.scss';
 
 import Product from '../Product';
 
-const ProductList = () => {
-  const [products, setProducts] = useState([]);
-  const [error, setError] = useState();
-
+const ProductList = ({ error, products, fetchProducts }) => { 
   useEffect(() => {
-    fetch('http://localhost:3001/products')
-      .then(response => response.json())
-      .then(data => {
-        console.log(data);
-        setProducts(data);
-      })
-      .catch(err => setError(err));
+    fetchProducts();
   }, []);
+
+  const productsList = products.map(product => 
+    <Product key={product.id} 
+            description={product.description} 
+            category={product.Category.category}
+            fetchProducts={fetchProducts}/>
+  );
 
   return (
     <div className="product-list">
@@ -23,11 +21,12 @@ const ProductList = () => {
         <h3>Products list</h3>
       </header>
 
-      {products.map(product => {
-        return <Product key={product.id} 
-                        description={product.description} 
-                        category={product.Category.category}/>
-      })}
+      <div className="scrollable">
+        {error 
+          ? <div className="alert">Could not load the products, please refresh the page</div>
+          : productsList
+        }
+      </div>
 
     </div>
   );

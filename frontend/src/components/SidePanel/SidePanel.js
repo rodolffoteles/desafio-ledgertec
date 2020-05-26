@@ -1,10 +1,9 @@
-import React, { useState, useEffect }from 'react';
+import React from 'react';
 import './SidePanel.scss'
 
 import ProductForm from '../ProductForm';
-import Product from '../Product';
 
-const SidePanel = () => {
+const SidePanel = ({ fetchProducts }) => {
   const postProduct = (category, description) => {
     fetch('http://localhost:3001/products', {
       method: 'POST',
@@ -15,14 +14,18 @@ const SidePanel = () => {
         category: category,
         description: description
       })
-    });
+    })
+    .then(() => fetchProducts());
   }
 
   return (
     <div className="side-panel">
       <h3>Add new product</h3>
 
-      <ProductForm handleSubmit={postProduct} actionWord="Add"/>
+      <ProductForm 
+        handleSubmit={postProduct} 
+        actionWord="Add"
+        />
     </div>
   )
 }
