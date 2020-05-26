@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import './ProductForm.scss';
 
 const ProductForm = (props) => {
-  const [category, setCategory] = useState(props.initialCategory && '');
-  const [description, setDescription] = useState(props.initialDescription && '');
+  const [category, setCategory] = useState(props.initialCategory);
+  const [description, setDescription] = useState(props.initialDescription);
   const [error, setError] = useState(false);
 
   const localHandleSubmit = (event) => {

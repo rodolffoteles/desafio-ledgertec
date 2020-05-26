@@ -1,13 +1,21 @@
 @import '../../style/shared.scss';
 
-.side-panel {
+.panel {
   display: flex;
   flex-direction: column;
   padding: 0 1rem;
-  border-right: 1px solid $grey;
   background-color: $grey-lightest;
 
-  button {
-    width: 100%;
+  header {
+    margin: 1rem 0;
+
+    h3 {
+      font-size: 1.2rem;
+      font-weight: 500;
+    }
   }
+}
+
+#add-panel {
+  border-right: 1px solid $grey;
 }

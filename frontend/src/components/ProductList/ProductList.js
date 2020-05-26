@@ -3,15 +3,16 @@ import './ProductList.scss';
 
 import Product from '../Product';
 
-const ProductList = ({ error, products, fetchProducts }) => { 
+const ProductList = ({ error, products, updateProductsList, showEditPanel }) => {
   useEffect(() => {
-    fetchProducts();
-  }, [fetchProducts]);
+    updateProductsList();
+  }, [updateProductsList]);
 
   const productsList = products.map(product => 
     <Product key={product.id} 
             product={product}
-            fetchProducts={fetchProducts}/>
+            updateProductsList={updateProductsList}
+            showEditPanel={showEditPanel}/>
   );
 
   return (
@@ -22,7 +23,9 @@ const ProductList = ({ error, products, fetchProducts }) => {
 
       <div className="scrollable">
         {error 
-          ? <div className="alert">Could not load the products, please refresh the page</div>
+          ? <div className="alert">
+              Could not load the products, please refresh the page
+            </div>
           : productsList
         }
       </div>

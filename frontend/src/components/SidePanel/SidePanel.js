@@ -3,7 +3,7 @@ import './SidePanel.scss'
 
 import ProductForm from '../ProductForm';
 
-const SidePanel = ({ fetchProducts }) => {
+const SidePanel = ({ updateProductsList }) => {
   const postProduct = (category, description) => {
     fetch('http://localhost:3001/products', {
       method: 'POST',
@@ -15,18 +15,20 @@ const SidePanel = ({ fetchProducts }) => {
         description: description
       })
     })
-    .then(() => fetchProducts());
+    .then(() => updateProductsList());
   }
 
   return (
-    <div className="side-panel">
-      <h3>Add new product</h3>
+    <section className="panel" id="add-panel">
+      <header>
+        <h3>Add new product</h3>
+      </header>
 
       <ProductForm 
         handleSubmit={postProduct} 
         actionWord="Add"
         />
-    </div>
+    </section>
   )
 }
 

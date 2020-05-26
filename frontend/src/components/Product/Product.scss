@@ -5,14 +5,29 @@
   padding: 0.5rem;
   transition: background-color 0.2s ease;
   color: $text-dark;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &:hover {
+    background-color: $grey-lightest;
+  }
 
   p {
     color: $grey-dark;
     margin-bottom: 0.5rem;
   }
 
-  &:hover {
-    background-color: $grey-lightest;
+  .actions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-left: 1rem;
+
+    button:not(:last-child) {
+      margin-right: 0.5rem;
+    }
   }
 
   svg {
