@@ -6,12 +6,11 @@ import Product from '../Product';
 const ProductList = ({ error, products, fetchProducts }) => { 
   useEffect(() => {
     fetchProducts();
-  }, []);
+  }, [fetchProducts]);
 
   const productsList = products.map(product => 
     <Product key={product.id} 
-            description={product.description} 
-            category={product.Category.category}
+            product={product}
             fetchProducts={fetchProducts}/>
   );
 
