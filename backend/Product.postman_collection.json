@@ -11,17 +11,70 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:3000/products",
+					"raw": "localhost:3001/products",
 					"host": [
 						"localhost"
 					],
-					"port": "3000",
+					"port": "3001",
 					"path": [
 						"products"
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "List products",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3001/products",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"products"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "257"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"101-4X4O3E+5AEvoNc8x9zqCcqubn8k\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 27 May 2020 02:31:53 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"description\": \"Riachuelo Mens Slim Jeans\",\n        \"id_category\": 1,\n        \"category\": \"Pants\"\n    },\n    {\n        \"id\": 2,\n        \"description\": \"C&A Womens White T-Shirt\",\n        \"id_category\": 2,\n        \"category\": \"Shirt\"\n    },\n    {\n        \"id\": 3,\n        \"description\": \"Adidas Mens Daily Sneaker\",\n        \"id_category\": 3,\n        \"category\": \"Shoe\"\n    }\n]"
+				}
+			]
 		},
 		{
 			"name": "Show product",
@@ -29,18 +82,72 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:3000/products/1",
+					"raw": "localhost:3001/products/1",
 					"host": [
 						"localhost"
 					],
-					"port": "3000",
+					"port": "3001",
 					"path": [
 						"products",
 						"1"
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Show product",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3001/products/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"products",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "105"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"69-mca9XW7Oj+P+15XlwFANP9c6cSw\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 27 May 2020 02:40:15 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"description\": \"Womens Ultra Cotton Adult Long Sleeve T-Shirt\",\n    \"id_category\": 2,\n    \"category\": \"Shirt\"\n}"
+				}
+			]
 		},
 		{
 			"name": "Create product",
@@ -55,14 +162,14 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"id_category\": 1,\n\t\"description\": \"Mens Ultra Cotton Adult Long Sleeve T-Shirt\"\n}"
+					"raw": "{\n\t\"category\": \"Shirt\",\n\t\"description\": \"Mens Ultra Cotton Adult Long Sleeve T-Shirt\"\n}"
 				},
 				"url": {
-					"raw": "localhost:3000/products",
+					"raw": "localhost:3001/products",
 					"host": [
 						"localhost"
 					],
-					"port": "3000",
+					"port": "3001",
 					"path": [
 						"products"
 					]
@@ -82,14 +189,14 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"id_category\": 1,\n\t\"description\": \"Mens Ultra Cotton Adult Long Sleeve T-Shirt\"\n}"
+							"raw": "{\n\t\"category\": \"Shirt\",\n\t\"description\": \"Mens Ultra Cotton Adult Long Sleeve T-Shirt\"\n}"
 						},
 						"url": {
-							"raw": "localhost:3000/products",
+							"raw": "localhost:3001/products",
 							"host": [
 								"localhost"
 							],
-							"port": "3000",
+							"port": "3001",
 							"path": [
 								"products"
 							]
@@ -104,12 +211,16 @@
 							"value": "Express"
 						},
 						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
 							"key": "Location",
-							"value": "/products/5"
+							"value": "/products/15"
 						},
 						{
 							"key": "Date",
-							"value": "Sun, 24 May 2020 01:08:12 GMT"
+							"value": "Wed, 27 May 2020 02:34:31 GMT"
 						},
 						{
 							"key": "Connection",
@@ -138,21 +249,73 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"id_category\": 1,\n\t\"description\": \"Mens Ultra Cotton Adult Long Sleeve T-Shirt\"\n}"
+					"raw": "{\n\t\"category\": \"Shirt\",\n\t\"description\": \"Womens Ultra Cotton Adult Long Sleeve T-Shirt\"\n}"
 				},
 				"url": {
-					"raw": "localhost:3000/products/1",
+					"raw": "localhost:3001/products/1",
 					"host": [
 						"localhost"
 					],
-					"port": "3000",
+					"port": "3001",
 					"path": [
 						"products",
 						"1"
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Update product",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"category\": \"Shirt\",\n\t\"description\": \"Womens Ultra Cotton Adult Long Sleeve T-Shirt\"\n}"
+						},
+						"url": {
+							"raw": "localhost:3001/products/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"products",
+								"1"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 27 May 2020 02:36:22 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
 		},
 		{
 			"name": "Delete product",
@@ -160,18 +323,60 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "localhost:3000/products/1",
+					"raw": "localhost:3001/products/1",
 					"host": [
 						"localhost"
 					],
-					"port": "3000",
+					"port": "3001",
 					"path": [
 						"products",
 						"1"
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Delete product",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3001/products/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"products",
+								"1"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 27 May 2020 02:40:40 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
 		}
 	],
 	"protocolProfileBehavior": {}
