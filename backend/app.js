@@ -15,9 +15,9 @@ app.use(router);
 // Error handler
 app.use(async (err, req, res, next) => {
   if (process.env.NODE_ENV === 'development'){
-    return res.status(500).json(err);
+    return res.status(err.status || 500).json(err);
   } else {
-    return res.status(500).end();
+    return res.status(err.status || 500).end();
   }
 });
 
