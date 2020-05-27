@@ -1,6 +1,6 @@
 import React from 'react';
 import './ProductList.scss';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { parse } from 'query-string';
 
 import Product from '../Product';
@@ -18,10 +18,16 @@ const ProductList = ({ products, updateProductsList, showEditPanel }) => {
     );
   }
   
+  const closeIcon = '\u2715';
+
   return (
     <div>
       {category && 
-        <p className="selected-category">{category} category products</p>}
+        <p className="selected-category">
+          {category} category products
+
+          <Link to="/products" className="close-button">{closeIcon}</Link>
+        </p>}
 
       {productsToList.map(product => (
         <Product key={product.id}

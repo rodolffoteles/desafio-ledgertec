@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import './ListPanel.scss';
-import { Switch, Route, NavLink, useLocation } from 'react-router-dom';
+import { Switch, Route, NavLink, Redirect, useLocation } from 'react-router-dom';
 
 import CategoryList from '../CategoryList';
 import ProductList from '../ProductList';
@@ -41,6 +41,11 @@ const ListPanel = ({ error, products, updateProductsList, showEditPanel }) => {
               updateProductsList={updateProductsList}
               showEditPanel={showEditPanel}/>
           </Route>
+
+          <Route exact path="/">
+             <Redirect to="/products" />
+          </Route>
+
         </Switch>
       </div>
     </section>

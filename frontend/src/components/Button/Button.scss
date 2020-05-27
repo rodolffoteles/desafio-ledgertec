@@ -62,3 +62,17 @@ button {
     background-color: $green-darkest;
   }
 }
+
+.close-button {
+  color: $grey-dark;
+  padding: 0.5rem 0.75rem;
+  background-color: transparent;
+  text-decoration: none;
+  font-size: 1.3rem;
+  border-radius: 100%;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: $grey;
+  }
+}

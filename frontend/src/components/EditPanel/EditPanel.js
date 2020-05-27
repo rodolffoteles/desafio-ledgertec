@@ -34,7 +34,7 @@ const EditPanel = ({ product, updateProductsList, closeEditPanel }) => {
       <header>
         <h3>Edit product</h3>
 
-        <button onClick={handleClose}>{closeIcon}</button>
+        <button className="close-button" onClick={handleClose}>{closeIcon}</button>
       </header>
 
       <ProductForm 

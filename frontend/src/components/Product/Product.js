@@ -28,11 +28,11 @@ const Product = ({ product, updateProductsList, showEditPanel }) => {
       </div>
 
       <div className="actions">
-        <Button className="btn-blue btn-outline" onClick={editProduct}>
+        <Button title="Edit" className="btn-blue btn-outline" onClick={editProduct}>
           <PencilIcon/>
         </Button>
         
-        <Button className="btn-red btn-outline" onClick={deleteProduct}>
+        <Button title="Delete" className="btn-red btn-outline" onClick={deleteProduct}>
           <TrashIcon/>
         </Button>
       </div>

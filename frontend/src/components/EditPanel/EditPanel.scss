@@ -4,17 +4,9 @@
   border-left: 1px solid $grey;
   position: relative;
 
-  header button {
-    color: $text-dark;
-    background-color: transparent;
+  .close-button {
     position: absolute;
     top: 0.5rem;
     right: 0.5rem;
-    font-size: 1.3rem;
-    border-radius: 100%;
-
-    &:hover {
-      background-color: $grey;
-    }
   }
 }

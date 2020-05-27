@@ -5,4 +5,11 @@
   padding: 1rem;
   background-color: $grey-light;
   color: $grey-dark;
+  position: relative;
+
+  .close-button {
+    position: absolute;
+    top: 0.3rem;
+    right: 0.3rem;
+  }
 }
