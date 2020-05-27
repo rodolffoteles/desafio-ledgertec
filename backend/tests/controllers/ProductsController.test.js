@@ -1,11 +1,16 @@
 const request = require('supertest');
-const app = require('../app');
-const { sequelize, Category, Product } = require('../models');
+const app = require('../../app');
+const { sequelize, Category, Product } = require('../../app/models');
 
 describe('Products', () => {
   beforeAll(async () => {
     // Cretate all tables on the test database
     await sequelize.sync({ force: true });
+  });
+
+  beforeEach(async () => {
+    // Truncate all tables
+    await sequelize.truncate({ force: true });
   });
 
   it('should be able to list products', async () => {
@@ -20,15 +25,25 @@ describe('Products', () => {
         category: 'T-Shirts',
         description: 'Adidas Mens Black T-Shirt'
       }
-    ]
+    ];
 
-    products.forEach(async product => {
+    for (const product of products) {
       await request(app).post('/products').send(product);
-    })
+    }
+
+    let expectedProducts = products.map(product => {
+      return {
+        id: expect.any(Number), 
+        id_category: expect.any(Number), 
+        ...product
+      }
+    });
 
     let response = await request(app).get('/products');
     expect(response.status).toBe(200);
-    expect(response.body.length).toEqual(3);
+    expect(response.body).toEqual(
+      expect.arrayContaining(expectedProducts)
+    );
   });
 
   it('should be able to show product', async () => {
